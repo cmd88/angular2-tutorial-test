@@ -5,18 +5,12 @@ import { HeroService } from './services/hero.service';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { DashboardComponent } from './dashboard.component';
+import { ButtonDemoComponent } from './directive/button/button-demo.component';
 
 @Component({
   selector: 'my-app',
-  template: `
-  <h1>{{title}}</h1>
-  <nav>
-    <a [routerLink]="['Dashboard']">Dashboard</a>
-    <a [routerLink]="['Heroes']">Heroes</a>
-  </nav>
-  <router-outlet></router-outlet>
-  `,
- directives: [ROUTER_DIRECTIVES],
+ templateUrl: 'app/app.component.html',
+ directives: [ROUTER_DIRECTIVES, ButtonDemoComponent],
   providers: [ROUTER_PROVIDERS, HeroService],
   styleUrls: ['app/app.component.css']
 })
